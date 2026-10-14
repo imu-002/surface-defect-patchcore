@@ -24,7 +24,7 @@ No PyTorch is needed anywhere. The weights are the timm `wide_resnet50_racm` Ima
 ## Run on Google Colab (no installation)
 
 1. Create a GitHub repository and upload the contents of this folder (the `.gitignore` keeps large files out), or skip GitHub and upload the zip inside Colab.
-2. Open `colab_run.ipynb` in Colab: <https://colab.research.google.com/github/YOUR_NAME/YOUR_REPO/blob/main/colab_run.ipynb>
+2. Open `colab_run.ipynb` in Colab: <https://colab.research.google.com/github/imu-002/surface-defect-patchcore/blob/main/colab_run.ipynb>
    (or upload the notebook via File > Upload notebook).
 3. Run the cells top to bottom. A GPU is not needed.
 
