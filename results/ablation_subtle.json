@@ -1,0 +1,54 @@
+[
+ {
+  "category": "fabric",
+  "pca_dim": 1536,
+  "coreset_ratio": 0.01,
+  "bank": 870,
+  "image_auroc": 0.9209375,
+  "pixel_auroc": 0.954482849490059,
+  "aupro": 0.8942845110876618,
+  "search_ms": 17.505141600031493,
+  "backbone_ms": 109.14350719995127,
+  "est_fps": 7.6835219514021755,
+  "fit_seconds_coreset": 1.5158019065856934
+ },
+ {
+  "category": "fabric",
+  "pca_dim": 1536,
+  "coreset_ratio": 0.1,
+  "bank": 8704,
+  "image_auroc": 0.92625,
+  "pixel_auroc": 0.9591369983633748,
+  "aupro": 0.8998484122662667,
+  "search_ms": 139.26797210001496,
+  "backbone_ms": 109.14350719995127,
+  "est_fps": 3.969648397043628,
+  "fit_seconds_coreset": 17.0002920627594
+ },
+ {
+  "category": "wood",
+  "pca_dim": 1536,
+  "coreset_ratio": 0.01,
+  "bank": 870,
+  "image_auroc": 0.7246875,
+  "pixel_auroc": 0.7192867550141453,
+  "aupro": 0.6197663611031213,
+  "search_ms": 18.273645899944313,
+  "backbone_ms": 102.26956680003241,
+  "est_fps": 8.06170670876366,
+  "fit_seconds_coreset": 2.3692986965179443
+ },
+ {
+  "category": "wood",
+  "pca_dim": 1536,
+  "coreset_ratio": 0.1,
+  "bank": 8704,
+  "image_auroc": 0.755625,
+  "pixel_auroc": 0.7438522643742144,
+  "aupro": 0.6225233946506871,
+  "search_ms": 143.51191649998327,
+  "backbone_ms": 102.26956680003241,
+  "est_fps": 4.011529403475501,
+  "fit_seconds_coreset": 19.17754554748535
+ }
+]

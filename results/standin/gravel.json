@@ -1,0 +1,525 @@
+{
+ "category": "gravel",
+ "n_train": 100,
+ "n_test_good": 40,
+ "n_test_defect": 80,
+ "defect_types": [
+  "color",
+  "crack",
+  "hole",
+  "scratch",
+  "stain"
+ ],
+ "bank_size": 8704,
+ "fit_seconds": 35.281612396240234,
+ "image_thr": 46.9931755065918,
+ "patchcore": {
+  "image_auroc": 0.9237500000000001,
+  "pixel_auroc": 0.9852181762395853,
+  "aupro": 0.9032811729529804,
+  "best_f1_oracle": 0.9019607843137255,
+  "at_calibrated_threshold": {
+   "accuracy": 0.7583333333333333,
+   "precision": 1.0,
+   "recall": 0.6375,
+   "f1": 0.7786259541984732,
+   "false_positive_rate": 0.0
+  }
+ },
+ "per_type": {
+  "color": {
+   "image_auroc": 1.0,
+   "detected": 1.0
+  },
+  "crack": {
+   "image_auroc": 0.8828125,
+   "detected": 0.375
+  },
+  "hole": {
+   "image_auroc": 0.7359375,
+   "detected": 0.125
+  },
+  "scratch": {
+   "image_auroc": 1.0,
+   "detected": 0.875
+  },
+  "stain": {
+   "image_auroc": 1.0,
+   "detected": 0.8125
+  }
+ },
+ "baselines_image_auroc": {
+  "Global-feature kNN": 0.8084375,
+  "One-class SVM": 0.8128124999999999,
+  "Isolation Forest": 0.875625,
+  "PatchCore (ours)": 0.9237500000000001
+ },
+ "type_classification": {
+  "kNN/hand": {
+   "accuracy": 0.7375,
+   "macro_f1": 0.7388508161885443,
+   "labels": [
+    "color",
+    "crack",
+    "hole",
+    "scratch",
+    "stain"
+   ],
+   "confusion": [
+    [
+     14,
+     0,
+     0,
+     0,
+     2
+    ],
+    [
+     0,
+     8,
+     4,
+     3,
+     1
+    ],
+    [
+     0,
+     6,
+     9,
+     0,
+     1
+    ],
+    [
+     0,
+     3,
+     0,
+     13,
+     0
+    ],
+    [
+     0,
+     1,
+     0,
+     0,
+     15
+    ]
+   ],
+   "folds": 5
+  },
+  "kNN/deep": {
+   "accuracy": 0.8875,
+   "macro_f1": 0.8884057846012304,
+   "labels": [
+    "color",
+    "crack",
+    "hole",
+    "scratch",
+    "stain"
+   ],
+   "confusion": [
+    [
+     15,
+     0,
+     0,
+     0,
+     1
+    ],
+    [
+     0,
+     14,
+     2,
+     0,
+     0
+    ],
+    [
+     0,
+     2,
+     14,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     1,
+     15,
+     0
+    ],
+    [
+     2,
+     0,
+     1,
+     0,
+     13
+    ]
+   ],
+   "folds": 5
+  },
+  "kNN/both": {
+   "accuracy": 0.9,
+   "macro_f1": 0.9007736349671834,
+   "labels": [
+    "color",
+    "crack",
+    "hole",
+    "scratch",
+    "stain"
+   ],
+   "confusion": [
+    [
+     15,
+     0,
+     0,
+     0,
+     1
+    ],
+    [
+     0,
+     14,
+     2,
+     0,
+     0
+    ],
+    [
+     0,
+     1,
+     15,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     1,
+     15,
+     0
+    ],
+    [
+     2,
+     0,
+     1,
+     0,
+     13
+    ]
+   ],
+   "folds": 5
+  },
+  "SVM/hand": {
+   "accuracy": 0.8125,
+   "macro_f1": 0.8152277039848197,
+   "labels": [
+    "color",
+    "crack",
+    "hole",
+    "scratch",
+    "stain"
+   ],
+   "confusion": [
+    [
+     15,
+     0,
+     0,
+     0,
+     1
+    ],
+    [
+     0,
+     10,
+     5,
+     1,
+     0
+    ],
+    [
+     0,
+     6,
+     10,
+     0,
+     0
+    ],
+    [
+     0,
+     1,
+     0,
+     15,
+     0
+    ],
+    [
+     0,
+     1,
+     0,
+     0,
+     15
+    ]
+   ],
+   "folds": 5
+  },
+  "SVM/deep": {
+   "accuracy": 0.9625,
+   "macro_f1": 0.9628320683111955,
+   "labels": [
+    "color",
+    "crack",
+    "hole",
+    "scratch",
+    "stain"
+   ],
+   "confusion": [
+    [
+     16,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     15,
+     1,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     16,
+     0,
+     0
+    ],
+    [
+     0,
+     1,
+     0,
+     15,
+     0
+    ],
+    [
+     0,
+     0,
+     1,
+     0,
+     15
+    ]
+   ],
+   "folds": 5
+  },
+  "SVM/both": {
+   "accuracy": 0.9625,
+   "macro_f1": 0.9628320683111955,
+   "labels": [
+    "color",
+    "crack",
+    "hole",
+    "scratch",
+    "stain"
+   ],
+   "confusion": [
+    [
+     16,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     15,
+     1,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     16,
+     0,
+     0
+    ],
+    [
+     0,
+     1,
+     0,
+     15,
+     0
+    ],
+    [
+     0,
+     0,
+     1,
+     0,
+     15
+    ]
+   ],
+   "folds": 5
+  },
+  "RandomForest/hand": {
+   "accuracy": 0.825,
+   "macro_f1": 0.8264662756598241,
+   "labels": [
+    "color",
+    "crack",
+    "hole",
+    "scratch",
+    "stain"
+   ],
+   "confusion": [
+    [
+     15,
+     0,
+     0,
+     0,
+     1
+    ],
+    [
+     0,
+     10,
+     5,
+     1,
+     0
+    ],
+    [
+     0,
+     3,
+     12,
+     0,
+     1
+    ],
+    [
+     0,
+     2,
+     0,
+     14,
+     0
+    ],
+    [
+     0,
+     1,
+     0,
+     0,
+     15
+    ]
+   ],
+   "folds": 5
+  },
+  "RandomForest/deep": {
+   "accuracy": 0.8875,
+   "macro_f1": 0.8885874877810362,
+   "labels": [
+    "color",
+    "crack",
+    "hole",
+    "scratch",
+    "stain"
+   ],
+   "confusion": [
+    [
+     14,
+     0,
+     0,
+     0,
+     2
+    ],
+    [
+     0,
+     14,
+     2,
+     0,
+     0
+    ],
+    [
+     0,
+     1,
+     14,
+     0,
+     1
+    ],
+    [
+     0,
+     1,
+     0,
+     15,
+     0
+    ],
+    [
+     1,
+     0,
+     1,
+     0,
+     14
+    ]
+   ],
+   "folds": 5
+  },
+  "RandomForest/both": {
+   "accuracy": 0.9125,
+   "macro_f1": 0.9126958525345623,
+   "labels": [
+    "color",
+    "crack",
+    "hole",
+    "scratch",
+    "stain"
+   ],
+   "confusion": [
+    [
+     15,
+     0,
+     0,
+     0,
+     1
+    ],
+    [
+     0,
+     14,
+     2,
+     0,
+     0
+    ],
+    [
+     0,
+     1,
+     13,
+     0,
+     2
+    ],
+    [
+     0,
+     1,
+     0,
+     15,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     16
+    ]
+   ],
+   "folds": 5
+  }
+ },
+ "supervised_vs_unseen": {
+  "supervised": {
+   "seen": {
+    "SVM": 0.9137500000000001,
+    "RandomForest": 0.8912500000000001
+   },
+   "unseen": {
+    "SVM": 0.914375,
+    "RandomForest": 0.8521875000000001
+   }
+  },
+  "patchcore": {
+   "seen": 0.95125,
+   "unseen": 0.9193750000000002
+  }
+ },
+ "latency_ms": {
+  "preprocess": 2.266598759988483,
+  "backbone": 154.26401292004812,
+  "search": 172.76088139999047,
+  "heatmap": 0.6022833599945443,
+  "total_ms": 329.8937764400216,
+  "fps": 3.0312787673392534
+ },
+ "seconds": 105.31173539161682
+}
