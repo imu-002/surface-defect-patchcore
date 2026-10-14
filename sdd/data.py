@@ -46,6 +46,26 @@ def _images(d: str) -> List[str]:
     return sorted(os.path.join(d, f) for f in os.listdir(d) if f.lower().endswith(IMG_EXT))
 
 
+def resolve_root(root: str) -> str:
+    """Find the folder that directly contains the category folders (<cat>/train, <cat>/test).
+    MVTec archives often unpack into an extra wrapper folder, so look a few levels down."""
+    def ok(d):
+        return os.path.isdir(d) and any(os.path.isdir(os.path.join(d, c, "train")) for c in os.listdir(d))
+    if not os.path.isdir(root):
+        raise FileNotFoundError(f"dataset folder not found: {root}")
+    if ok(root):
+        return root
+    for d, subdirs, _ in os.walk(root):
+        if d[len(root):].count(os.sep) >= 3:
+            subdirs[:] = []
+            continue
+        subdirs.sort()
+        if ok(d):
+            return d
+    raise FileNotFoundError(f"no category folders (<category>/train, <category>/test) found under {root}; "
+                            f"check that the dataset was fully extracted")
+
+
 def list_categories(root: str) -> List[str]:
     return sorted(c for c in os.listdir(root) if os.path.isdir(os.path.join(root, c, "train")))
 

@@ -164,7 +164,12 @@ if __name__ == "__main__":
     ap.add_argument("--seed", type=int, default=0)
     args = ap.parse_args()
     os.makedirs(args.out, exist_ok=True)
+    args.data = data.resolve_root(args.data)
+    print("dataset root:", args.data, "| categories:", data.list_categories(args.data), flush=True)
     ex = FeatureExtractor(args.onnx)
+    missing = [c for c in (args.categories or []) if not os.path.isdir(os.path.join(args.data, c, "test"))]
+    if missing:
+        sys.exit(f"categories not found in {args.data}: {missing}. Available: {data.list_categories(args.data)}")
     for name in args.categories or data.list_categories(args.data):
         if os.path.exists(os.path.join(args.out, f"{name}.json")):
             print(f"[{name}] already done, skipping", flush=True)

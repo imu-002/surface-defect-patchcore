@@ -47,6 +47,9 @@ def main():
     a = ap.parse_args()
     os.makedirs(a.out, exist_ok=True)
     R = {n: load(r) for n, r in zip(a.names, a.runs)}
+    empty = [n for n, v in R.items() if not v]
+    if empty:
+        raise SystemExit(f"no result files found for {empty}: the experiment step did not finish. Fix the error above it first.")
     md = []
 
     for name, res in R.items():
